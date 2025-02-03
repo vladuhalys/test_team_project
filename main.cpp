@@ -5,10 +5,7 @@
 
 using namespace std;
 
-class Animal {
-private:
-    string _name;
-
+class IAnimal {
 public:
     Animal(string name, int age) : _name(name) {}
 
@@ -16,6 +13,22 @@ public:
 
     virtual void makeSound() const {
         cout << _name << " издаёт неопределённый звук!" << endl;
+    }
+
+    virtual ~Animal() = default;
+};
+
+class Animal {
+private:
+    string name_;
+
+public:
+    Animal(string name, int age) : name_(name) {}
+
+    string getName() const { return name_; }
+
+    virtual void makeSound() const {
+        cout << name_ << " издаёт неопределённый звук!" << endl;
     }
 
     virtual ~Animal() = default;
