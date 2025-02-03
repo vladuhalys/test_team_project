@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+#include "data/file_work/file_work.h"
+
 using namespace std;
 
 class Animal {
@@ -8,10 +10,9 @@ private:
     string _name;
 
 public:
-    Animal(string name, int age) : _name(name), _age(age) {}
+    Animal(string name, int age) : _name(name) {}
 
     string getName() const { return _name; }
-    int getAge() const { return _age; }
 
     virtual void makeSound() const {
         cout << _name << " издаёт неопределённый звук!" << endl;
@@ -43,6 +44,8 @@ public:
 
 int main()
 {
-
+    FileWork<Animal> file_work("animal.bin");
+    Dog dog("Dog", 5);
+    file_work.save_class(dog);
     return 0;
 }

@@ -158,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data\data.h" />
+    <ClInclude Include="data\file_work\file_work.h" />
     <ClInclude Include="domain\domain.h" />
     <ClInclude Include="presentation\presentation.h" />
   </ItemGroup>
