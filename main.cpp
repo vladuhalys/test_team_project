@@ -10,8 +10,8 @@ private:
 public:
     Animal(string name, int age) : _name(name), _age(age) {}
 
-    [[nodiscard]] string getName() const { return _name; }
-    [[nodiscard]] int getAge() const { return _age; }
+    string getName() const { return _name; }
+    int getAge() const { return _age; }
 
     virtual void makeSound() const {
         cout << _name << " издаёт неопределённый звук!" << endl;
@@ -41,12 +41,8 @@ public:
     }
 };
 
-int main() {
-    Dog dog("Bobic", 3);
-    Cat cat("Murka", 2);
-
-    dog.makeSound();
-    cat.makeSound();
+int main()
+{
 
     return 0;
 }
